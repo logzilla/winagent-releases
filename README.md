@@ -5,7 +5,7 @@ and forwards events to your LogZilla server via HTTP or HTTPS. It supports
 primary and secondary server configurations, custom event filtering, and
 catch-up processing for events that occurred while the service was stopped.
 
-**Version:** 6.43.0.0
+**Version:** 6.43.1.0
 
 ## Table of Contents
 
@@ -186,7 +186,7 @@ The MSI installer supports in-place upgrades:
 After upgrade:
 
 1. Open **Syslog Agent Configuration**
-2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.43.0.0`
+2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.43.1.0`
 3. Verify service is running: **Agent service is Running**
 
 ### Manual Upgrade (If Needed)
@@ -417,6 +417,7 @@ specified program name.
 
 - **Documentation:** [LogZilla Documentation](https://www.logzilla.ai/docs)
 - **Support Portal:** [LogZilla Support](https://support.logzilla.net)
+- **GitHub Issues:** [Report a Bug](../../issues)
 
 ## License
 
