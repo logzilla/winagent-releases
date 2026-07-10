@@ -417,7 +417,6 @@ specified program name.
 
 - **Documentation:** [LogZilla Documentation](https://www.logzilla.ai/docs)
 - **Support Portal:** [LogZilla Support](https://support.logzilla.net)
-- **GitHub Issues:** [Report a Bug](../../issues)
 
 ## License
 
