@@ -5,7 +5,7 @@ and forwards events to your LogZilla server via HTTP or HTTPS. It supports
 primary and secondary server configurations, custom event filtering, and
 catch-up processing for events that occurred while the service was stopped.
 
-**Version:** 6.43.1.0
+**Version:** 6.44.0.0
 
 ## Table of Contents
 
@@ -186,7 +186,7 @@ The MSI installer supports in-place upgrades:
 After upgrade:
 
 1. Open **Syslog Agent Configuration**
-2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.43.1.0`
+2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.44.0.0`
 3. Verify service is running: **Agent service is Running**
 
 ### Manual Upgrade (If Needed)
@@ -264,7 +264,9 @@ Remove-Item "C:\ProgramData\LogZilla" -Recurse -Force
 2. Navigate to **Windows Logs → Application**
 3. Look for **Source: LogZilla SyslogAgent**
 4. Event ID 1000 = Service started successfully
-5. Event ID 1003 = Fatal error (check message for details)
+5. Event ID 1003 = Catch-up cap reached (historical event backlog capped — not fatal)
+6. Event ID 1004 = Configuration warning (a registry value was out of range and was clamped to its default)
+7. Event ID 1005 = Send failure to a healthy server (logged as a **warning** when a fatal-class rejection first begins a degraded episode, before the grace window; and as an **error** if it persists and escalates past the grace window — the secondary target logs only the escalation and never stops the service)
 
 **Common Issues:**
 
@@ -374,6 +376,7 @@ users can edit registry directly or use `.reg` files for import/export.
 | `Facility` | DWORD | 20 | Syslog facility code (20 = Local4) |
 | `Severity` | DWORD | 8 | Severity mapping (8 = Dynamic) |
 | `DebugLevel` | DWORD | 3 | Log level (1=ERROR, 2=WARN, 3=INFO, 5=DEBUG) |
+| `SendFailureEscalationMinutes` | DWORD | 10 | Minutes of persistent fatal-class send failures against a healthy server before the service stops (0 = never escalate) |
 
 ### Import/Export Configuration
 
