@@ -5,7 +5,10 @@ and forwards events to your LogZilla server via HTTP or HTTPS. It supports
 primary and secondary server configurations, custom event filtering, and
 catch-up processing for events that occurred while the service was stopped.
 
-**Version:** 6.43.2.0
+**Version:** 6.43.3.0
+
+**Documentation:** [Windows Event Forwarding](https://www.logzilla.ai/docs/receiving-data/windows-event-forwarding)
+on the LogZilla documentation site.
 
 ## Table of Contents
 
@@ -186,7 +189,7 @@ The MSI installer supports in-place upgrades:
 After upgrade:
 
 1. Open **Syslog Agent Configuration**
-2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.43.2.0`
+2. Check version in bottom-left corner: `LogZilla Syslog Agent version 6.43.3.0`
 3. Verify service is running: **Agent service is Running**
 
 ### Manual Upgrade (If Needed)
@@ -405,20 +408,9 @@ For high availability, configure a secondary LogZilla server:
 
 The agent sends events to **both** primary and secondary servers simultaneously.
 
-### File Watcher (Tail Mode)
-
-Monitor a log file and forward new lines as events:
-
-1. **File Name:** Path to log file (e.g., `C:\Logs\app.log`)
-2. **Program Name:** Identifier for events (e.g., `MyApp`)
-3. Click **Save**
-
-New lines appended to the file will be forwarded as syslog events with the
-specified program name.
-
 ## Support
 
-- **Documentation:** [LogZilla Documentation](https://www.logzilla.ai/docs)
+- **Documentation:** [Windows Event Forwarding](https://www.logzilla.ai/docs/receiving-data/windows-event-forwarding)
 - **Support Portal:** [LogZilla Support](https://support.logzilla.net)
 - **GitHub Issues:** [Report a Bug](../../issues)
 
